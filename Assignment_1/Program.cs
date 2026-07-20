@@ -18,7 +18,7 @@ class Program
 
     class Book
     {
-        public string Title { get; set; }
+        public string ?Title { get; set; }
         public int Pages { get; set; }
     }
     static void Main(string[] args)
@@ -135,5 +135,12 @@ class Program
         System.Console.WriteLine(book_title);
         #endregion
         
+
+        #region Question 14
+        //Using title from the previous question, use ?? to print "Untitled" if title is null. Then use ??= to assign title the value "Untitled" only if it's still null.
+        System.Console.WriteLine(book_title??"Untitled");
+        book_title??="Untitled";
+        System.Console.WriteLine(book_title);
+        #endregion
     }
 }
