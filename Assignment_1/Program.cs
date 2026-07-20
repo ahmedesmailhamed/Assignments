@@ -18,15 +18,15 @@ class Program
 
     class Book
     {
-        string Title;
-        int Pages;
+        public string Title { get; set; }
+        public int Pages { get; set; }
     }
     static void Main(string[] args)
     {
         #region Question 1
             // //Create a Book class with a Title (string) and Pages (int).
             // //Create a Book object and store it in a variable of type object. Print it.
-            object book =new Book();
+           // object book =new Book();
             //Console.WriteLine(book);//automatic Tostring()
         #endregion
 
@@ -109,18 +109,31 @@ class Program
 
         #region Question 11
         //Declare an int? year = null;. Print whether it has a value, then assign it 2023 and print its value.
-        int? year=null;
+        //int? year=null;
         // System.Console.WriteLine(year.HasValue);
         // year=2023;
         // System.Console.WriteLine(year);
-        if (year == null)
-        {
-            System.Console.WriteLine("year don't have value ");
-            year=2023;
-            System.Console.WriteLine(year);
-        }
+        // if (year == null)
+        // {
+        //     System.Console.WriteLine("year don't have value ");
+        //     year=2023;
+        //     System.Console.WriteLine(year);
+        // }
         #endregion
 
+        #region Question 12
+        //Declare a string? reviewer = null;. Print whether it is null.
+        // string ?reviewer =null;
+        // System.Console.WriteLine(reviewer==null);
+        #endregion
+
+
+        #region Question 13
+//Declare a Book? book = null;. Use ?. to safely read book.Title without crashing the program, and print the result.
+        Book ?book=null;
+        string ?book_title=book?.Title;
+        System.Console.WriteLine(book_title);
+        #endregion
         
     }
 }
