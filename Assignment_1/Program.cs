@@ -67,5 +67,12 @@ class Program
             
         #endregion
         
+        #region Question 6
+        //Declare a double price = 49.99; then convert it into an int using a cast.
+        double price=49.99;
+        //System.Console.WriteLine(price);
+        price=(int)price;
+        //System.Console.WriteLine(price);
+        #endregion
     }
 }
