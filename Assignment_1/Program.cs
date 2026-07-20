@@ -45,20 +45,27 @@ class Program
         
         #region Question 4
         //Write code that divides 10 by 0 inside a try block, catches the exception, prints "Cannot divide by zero", and then prints "Done" in a finally block.
-        int num=10;
-        try
-        {
-            num/=0;
-        }
-        catch
-        {
-            System.Console.WriteLine("Cannot divide by zero");
-        }
-        finally
-        {
-            System.Console.WriteLine("Done");
-        }
+        // int num=10;
+        // try
+        // {
+        //     num/=0;
+        // }
+        // catch
+        // {
+        //     System.Console.WriteLine("Cannot divide by zero");
+        // }
+        // finally
+        // {
+        //     System.Console.WriteLine("Done");
+        // }
         #endregion
-
+        
+        #region Question 5
+            //Declare an int pages = 300; then store it in a double variable without using a cast.
+            int pages=300;
+            double DBpages=pages;
+            
+        #endregion
+        
     }
 }
