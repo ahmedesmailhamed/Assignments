@@ -1,4 +1,6 @@
-﻿namespace Assignment_1;
+﻿using System.ComponentModel;
+
+namespace Assignment_1;
 
 class Program
 {
@@ -80,6 +82,13 @@ class Program
         string pagesText="464";
         Convert.ToInt32(pagesText);
         #endregion
-
+        
+        #region Question 8
+        //n string yearText = "2023";, convert it using int.Parse(). Then given string badText = "abc";, use int.TryParse() to safely try converting it, and print "Invalid number" if it fails.
+        string yearText="2023";
+        System.Console.WriteLine(int.Parse(yearText));
+        string badText="abc";
+        System.Console.WriteLine(int.TryParse(badText,out int number));
+        #endregion
     }
 }
