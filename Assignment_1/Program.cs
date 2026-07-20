@@ -110,9 +110,17 @@ class Program
         #region Question 11
         //Declare an int? year = null;. Print whether it has a value, then assign it 2023 and print its value.
         int? year=null;
-        System.Console.WriteLine(year.HasValue);
-        year=2023;
-        System.Console.WriteLine(year);
+        // System.Console.WriteLine(year.HasValue);
+        // year=2023;
+        // System.Console.WriteLine(year);
+        if (year == null)
+        {
+            System.Console.WriteLine("year don't have value ");
+            year=2023;
+            System.Console.WriteLine(year);
+        }
         #endregion
+
+        
     }
 }
