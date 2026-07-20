@@ -31,10 +31,34 @@ class Program
         #region Question 2
             //Using the Book class above,
             //  print the result of calling ToString(), Equals() (compare book with itself), GetHashCode(), and GetType() on book.
-            Console.WriteLine(book.ToString());
-            System.Console.WriteLine(book.Equals(book));
-            System.Console.WriteLine(book.GetHashCode());
-            System.Console.WriteLine(book.GetType());
+            // Console.WriteLine(book.ToString());
+            // System.Console.WriteLine(book.Equals(book));
+            // System.Console.WriteLine(book.GetHashCode());
+            // System.Console.WriteLine(book.GetType());
         #endregion
+
+        #region Question 3
+            /*  Look at the line below. Is it a compile-time error, a runtime error, or a logical error? Fix it.
+                Compile-time error — you can't put text (string) into an int variable.
+            */
+        #endregion
+        
+        #region Question 4
+        //Write code that divides 10 by 0 inside a try block, catches the exception, prints "Cannot divide by zero", and then prints "Done" in a finally block.
+        int num=10;
+        try
+        {
+            num/=0;
+        }
+        catch
+        {
+            System.Console.WriteLine("Cannot divide by zero");
+        }
+        finally
+        {
+            System.Console.WriteLine("Done");
+        }
+        #endregion
+
     }
 }
