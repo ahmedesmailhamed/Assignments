@@ -130,17 +130,24 @@ class Program
 
         #region Question 13
 //Declare a Book? book = null;. Use ?. to safely read book.Title without crashing the program, and print the result.
-        Book ?book=null;
-        string ?book_title=book?.Title;
-        System.Console.WriteLine(book_title);
+        // Book ?book=null;
+        // string ?book_title=book?.Title;
+        // System.Console.WriteLine(book_title);
         #endregion
         
 
         #region Question 14
         //Using title from the previous question, use ?? to print "Untitled" if title is null. Then use ??= to assign title the value "Untitled" only if it's still null.
-        System.Console.WriteLine(book_title??"Untitled");
-        book_title??="Untitled";
-        System.Console.WriteLine(book_title);
+        // System.Console.WriteLine(book_title??"Untitled");
+        // book_title??="Untitled";
+        // System.Console.WriteLine(book_title);
         #endregion
+
+          #region Question 15
+          //Given string? name = "Ahmed"; (you are sure it's not null here), assign it to a non-nullable string confirmedName using the ! operator.
+          string ?name="Ahmed";
+          string confirmedName=name!;// (!) i'm sure value isn't null
+          System.Console.WriteLine(confirmedName);
+          #endregion
     }
 }
