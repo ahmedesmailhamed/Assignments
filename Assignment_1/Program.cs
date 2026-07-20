@@ -100,11 +100,19 @@ class Program
 
         #region Quesstion 10
         //Declare int copies = 100;. Box it into an object variable, then unbox it back into a new int variable, and print both.
-        int copies=100;
-        object cps=copies;//Boxing
-        int newcopies=(int)cps;//UnBoxing
-        System.Console.WriteLine(cps);
-        System.Console.WriteLine(newcopies);
+        // int copies=100;
+        // object cps=copies;//Boxing
+        // int newcopies=(int)cps;//UnBoxing
+        // System.Console.WriteLine(cps);
+        // System.Console.WriteLine(newcopies);
+        #endregion
+
+        #region Question 11
+        //Declare an int? year = null;. Print whether it has a value, then assign it 2023 and print its value.
+        int? year=null;
+        System.Console.WriteLine(year.HasValue);
+        year=2023;
+        System.Console.WriteLine(year);
         #endregion
     }
 }
