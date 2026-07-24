@@ -85,7 +85,7 @@ class Program
         #region Question 12
 //             //Given string[] books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };, use a for loop
 // to print each book with its position number, like 1. Clean Code.
-            // string []books={ "Clean Code", "The Pragmatic Programmer", "Refactoring" };
+             string []books={ "Clean Code", "The Pragmatic Programmer", "Refactoring" };
             // for(int i = 0; i < 3; i++)
             // {
             //     System.Console.WriteLine(books[i]+" "+(i+1));
@@ -103,12 +103,17 @@ class Program
 
         #region Question 14
             //Write a do-while loop that prints "Checking book..." exactly 3 times.
-            int cnt=2;
-        do
-        {
-            System.Console.WriteLine("Checking book...");
-            cnt--;
-        }while(cnt>=0);
+        //     int cnt=2;
+        // do
+        // {
+        //     System.Console.WriteLine("Checking book...");
+        //     cnt--;
+        // }while(cnt>=0);
+        #endregion
+
+        #region Question 15
+            //Using the same books array, use a foreach loop to print every book title.
+            foreach(string title in books)System.Console.WriteLine(title);
         #endregion
     }
 }
