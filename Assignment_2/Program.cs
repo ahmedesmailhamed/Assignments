@@ -39,17 +39,23 @@ class Program
         #region Question 5
         //Given string title = "Clean Code"; and int pages = 464;, build the sentence "Book: Clean Code,
 // Pages: 464" using the + operator.
-            string title ="Clean Code";
-            int pages=464;
-            System.Console.WriteLine("Book: "+title+", Pages; "+pages);
+            // string title ="Clean Code";
+            // int pages=464;
+            // System.Console.WriteLine("Book: "+title+", Pages; "+pages);
         #endregion
         #region Question 6
 
-            System.Console.WriteLine($"Book: {title}, Pages: {pages}");
+         //   System.Console.WriteLine($"Book: {title}, Pages: {pages}");
         #endregion
         #region Question 7
-        System.Console.WriteLine(string.Format("Book: {0}, Pages: {1}",title ,pages));
-            
+       // System.Console.WriteLine(string.Format("Book: {0}, Pages: {1}",title ,pages));
+        #endregion
+        #region Question 8
+        //Given int pages = 464;, write an if / else statement that prints "Long Book" if pages is greater than
+//300, otherwise prints "Short Book".
+            int pages=464;
+            if(pages>300)System.Console.WriteLine("Long Book");
+            else System.Console.WriteLine("Short Book");
         #endregion
     }
 }
