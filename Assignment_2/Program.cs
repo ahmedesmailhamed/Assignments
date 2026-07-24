@@ -85,11 +85,21 @@ class Program
         #region Question 12
 //             //Given string[] books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };, use a for loop
 // to print each book with its position number, like 1. Clean Code.
-            string []books={ "Clean Code", "The Pragmatic Programmer", "Refactoring" };
-            for(int i = 0; i < 3; i++)
-            {
-                System.Console.WriteLine(books[i]+" "+(i+1));
-            }
+             string []books={ "Clean Code", "The Pragmatic Programmer", "Refactoring" };
+            // for(int i = 0; i < 3; i++)
+            // {
+            //     System.Console.WriteLine(books[i]+" "+(i+1));
+            // }
         #endregion
+        #region Question 13
+            // Using the same books array, use a while loop to print every book title.
+            int cnt=0;
+        while (cnt<3)
+        {
+            System.Console.WriteLine(books[cnt]);
+            cnt++;
+        }
+        #endregion
+
     }
 }
