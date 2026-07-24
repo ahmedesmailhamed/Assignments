@@ -119,9 +119,19 @@ class Program
         #region Question 16
 //             Using the same books array, loop through it and print each title, but stop completely (break) once
 // you reach "Refactoring".
-            foreach(string title in books)
+        //     foreach(string title in books)
+        // {
+        //     if(title =="Refactoring")break;
+        //     System.Console.WriteLine(title);
+        // }
+        #endregion
+
+        #region Question 17
+//             Using the same books array, print every title except "The Pragmatic Programmer" (skip it with
+// continue, don't stop the loop).
+        foreach(string title in books)
         {
-            if(title =="Refactoring")break;
+            if(title =="The Pragmatic Programmer")continue;
             System.Console.WriteLine(title);
         }
         #endregion
