@@ -113,7 +113,17 @@ class Program
 
         #region Question 15
             //Using the same books array, use a foreach loop to print every book title.
-            foreach(string title in books)System.Console.WriteLine(title);
+            //foreach(string title in books)System.Console.WriteLine(title);
+        #endregion
+
+        #region Question 16
+//             Using the same books array, loop through it and print each title, but stop completely (break) once
+// you reach "Refactoring".
+            foreach(string title in books)
+        {
+            if(title =="Refactoring")break;
+            System.Console.WriteLine(title);
+        }
         #endregion
     }
 }
