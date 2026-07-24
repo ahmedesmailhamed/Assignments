@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zi9jAdPfI+A=",
+  "success": true,
+  "projectFilePath": "/home/abo_esmail/Dot Net track/Assignments/Assignment_2/Assignment_2.csproj",
+  "expectedPackageFiles": [
+    "/home/abo_esmail/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.10/microsoft.aspnetcore.app.ref.10.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
