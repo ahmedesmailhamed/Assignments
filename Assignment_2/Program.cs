@@ -129,11 +129,22 @@ class Program
         #region Question 17
 //             Using the same books array, print every title except "The Pragmatic Programmer" (skip it with
 // continue, don't stop the loop).
-        foreach(string title in books)
+        // foreach(string title in books)
+        // {
+        //     if(title =="The Pragmatic Programmer")continue;
+        //     System.Console.WriteLine(title);
+        // }
+        #endregion
+
+        #region Question 18
+            //Write a method PrintFirstBook() that prints the first book in the books array. If the array is empty,
+// use return to exit the method early instead of printing anything.
+        void PrintFirstBook()
         {
-            if(title =="The Pragmatic Programmer")continue;
-            System.Console.WriteLine(title);
+            if(books.Length==0)return;
+            System.Console.WriteLine(books[0]);
         }
+        PrintFirstBook();
         #endregion
     }
 }
