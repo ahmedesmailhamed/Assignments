@@ -43,5 +43,9 @@ class Program
             int pages=464;
             System.Console.WriteLine("Book: "+title+", Pages; "+pages);
         #endregion
+        #region Question 6
+
+            System.Console.WriteLine($"Book: {title}, Pages: {pages}");
+        #endregion
     }
 }
