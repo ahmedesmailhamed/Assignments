@@ -1,4 +1,6 @@
-﻿namespace Assignment_3;
+﻿using System.Text.RegularExpressions;
+
+namespace Assignment_3;
 
 class Program
 {
@@ -8,6 +10,10 @@ class Program
     }
     static void PrintBookTitle(string title){
         System.Console.WriteLine("Book title: " + title);
+    }
+    static void AddBonusPages(int pages)
+    {
+        pages+=50;
     }
     static void Main(string[] args)
     {
@@ -30,7 +36,15 @@ class Program
         #region Q4
 //             Write a method PrintBookTitle(string title) that prints "Book title: " + title. Call it with
 // "Clean Code".
-                PrintBookTitle("Clean Code");
+                //PrintBookTitle("Clean Code");
+        #endregion
+        #region Q5
+//             Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable
+// int pages = 400; and print pages afterward. What do you expect to see, and why?
+           int pages=400;
+            AddBonusPages(pages);
+            System.Console.WriteLine(pages);
+            //the pages not change becuase the function eidit a copy  
         #endregion
     }
 }
