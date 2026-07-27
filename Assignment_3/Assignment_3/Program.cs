@@ -23,6 +23,10 @@ class Program
     {
         pages+=50;
     }
+    static void ReplaceArray( double[] prices)
+    {
+        prices=new double[]{ 10.0, 12.5, 15.0 };
+    }
     static void Main(string[] args)
     {
         #region Q1
@@ -66,9 +70,18 @@ class Program
         #region Q7
 //             Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
 // Call it and print pages afterward. How is the result different from question 5?  
-            int pages=100;
-            AddBonusPagesByRef(ref  pages);
-            System.Console.WriteLine(pages);
+            // int pages=100;
+            // AddBonusPagesByRef(ref  pages);
+            // System.Console.WriteLine(pages);
+            //Bonus added because pages passed by refrance
+        #endregion
+        #region Q8
+//             Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a
+// new array { 10.0, 12.5, 15.0 }. Call it with your prices array and print prices.Length
+// afterward.
+             double[] prices = { 25.5, 40.0 };
+             ReplaceArray( prices);
+            System.Console.WriteLine(prices.Length);
         #endregion
     }
 }
