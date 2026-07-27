@@ -42,7 +42,9 @@ class Program
 
     static void PrintAllTitles(params string[] titles)
     {
-        System.Console.WriteLine($"title 1:{titles[0]} ,title2:{titles[1]} ,title3:{titles [2]}");
+        System.Console.WriteLine($"title 1:{titles[0]}");
+        System.Console.WriteLine( $"title 2:{titles[1]}");
+        System.Console.WriteLine( $"title 3:{titles [2]}");
     }
     static void Main(string[] args)
     {
