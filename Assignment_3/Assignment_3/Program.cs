@@ -6,6 +6,9 @@ class Program
     {
         System.Console.WriteLine("Welcome to the Library!");
     }
+    static void PrintBookTitle(string title){
+        System.Console.WriteLine("Book title: " + title);
+    }
     static void Main(string[] args)
     {
         #region Q1
@@ -22,7 +25,12 @@ class Program
         #region Q3
 //         Write a method called PrintWelcomeMessage that takes no parameters and prints
 // "Welcome to the Library!". Call it from Main.
-            PrintWelcomeMessage();
+           // PrintWelcomeMessage();
+        #endregion
+        #region Q4
+//             Write a method PrintBookTitle(string title) that prints "Book title: " + title. Call it with
+// "Clean Code".
+                PrintBookTitle("Clean Code");
         #endregion
     }
 }
