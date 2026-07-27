@@ -37,7 +37,7 @@ class Program
     }
     static void PrintBookInfo(string title, int pages = 300)
     {
-        System.Console.WriteLine(pages);
+        System.Console.WriteLine($"title:{title} , pages:{pages}");
     }
     static void Main(string[] args)
     {
@@ -108,9 +108,15 @@ class Program
         #region Q10
 //             Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call
 // it once with only a title, and once passing both a title and pages
-            string title="Clean Code";
-                PrintBookInfo( title,   500);
-                PrintBookInfo( title);
+            // string title="Clean Code";
+            //     PrintBookInfo( title,   500);
+            //     PrintBookInfo( title);
+        #endregion
+        #region Q11
+//             Using the PrintBookInfo method from the question above, call it by naming the
+// parameters, passing pages before title.
+            string title="Clean Code";int pages=100;
+                PrintBookInfo(pages:pages,title:title);
         #endregion
 
     }
