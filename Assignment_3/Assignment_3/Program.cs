@@ -15,6 +15,10 @@ class Program
     {
         pages+=50;
     }
+    static void ApplyDiscount(double[] prices)
+    {
+        prices[0]-=5;
+    }
     static void Main(string[] args)
     {
         #region Q1
@@ -41,10 +45,19 @@ class Program
         #region Q5
 //             Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable
 // int pages = 400; and print pages afterward. What do you expect to see, and why?
-           int pages=400;
-            AddBonusPages(pages);
-            System.Console.WriteLine(pages);
-            //the pages not change becuase the function eidit a copy  
+           //int pages=400;
+            //AddBonusPages(pages);
+           // System.Console.WriteLine(pages);
+            //the pages not change becuase the function edit a copy  
+        #endregion
+        #region Q6
+//             Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0]. Call it
+// with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward. What do you expect to
+// see, and why?
+double[] prices = { 25.5, 40.0 };
+            ApplyDiscount( prices);
+            System.Console.WriteLine(prices[0]);
+
         #endregion
     }
 }
