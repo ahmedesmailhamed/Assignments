@@ -39,6 +39,11 @@ class Program
     {
         System.Console.WriteLine($"title:{title} , pages:{pages}");
     }
+
+    static void PrintAllTitles(params string[] titles)
+    {
+        System.Console.WriteLine($"title 1:{titles[0]} ,title2:{titles[1]} ,title3:{titles [2]}");
+    }
     static void Main(string[] args)
     {
         #region Q1
@@ -115,8 +120,13 @@ class Program
         #region Q11
 //             Using the PrintBookInfo method from the question above, call it by naming the
 // parameters, passing pages before title.
-            string title="Clean Code";int pages=100;
-                PrintBookInfo(pages:pages,title:title);
+            // string title="Clean Code";int pages=100;
+            //     PrintBookInfo(pages:pages,title:title);
+        #endregion
+        #region Q12
+//             Write a method PrintAllTitles(params string[] titles) that prints each title on its own line.
+// Call it with three book titles.
+                PrintAllTitles("C#","Clean Code","Compititive Programming");
         #endregion
 
     }
