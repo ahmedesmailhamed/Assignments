@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Reflection.Metadata.Ecma335;
+using System.Text.RegularExpressions;
 
 namespace Assignment_3;
 
@@ -23,9 +24,16 @@ class Program
     {
         pages+=50;
     }
-    static void ReplaceArray( double[] prices)
+    static void ReplaceArray(ref double[] prices)
     {
         prices=new double[]{ 10.0, 12.5, 15.0 };
+    }
+   static bool TryGetPrice(string title, out double price)
+    {
+        if(title=="Clean Code"){price=25.5;
+        return true;}
+        price=0;
+        return false;
     }
     static void Main(string[] args)
     {
@@ -79,9 +87,19 @@ class Program
 //             Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a
 // new array { 10.0, 12.5, 15.0 }. Call it with your prices array and print prices.Length
 // afterward.
-             double[] prices = { 25.5, 40.0 };
-             ReplaceArray( prices);
-            System.Console.WriteLine(prices.Length);
+            //  double[] prices = { 25.5, 40.0 };
+            //  ReplaceArray(ref prices);
+            // System.Console.WriteLine(prices.Length);
+            //with ref keyword we edit the real prices array not a copy from the array
+            //without ref we pass a copy from the the ref of the array so when we edit the edit will apply
+            //but when you change the whole array the change will apply to the copy of the re
+        #endregion
+        #region Q9
+//             Write a method bool TryGetPrice(string title, out double price) that returns true and sets
+// price to 25.5 if title is "Clean Code", otherwise returns false and sets price to 0. Call itand print the price if found
+                 string title="Clean Code";
+                 TryGetPrice( title, out double price);
+                 System.Console.WriteLine(price);
         #endregion
     }
 }
