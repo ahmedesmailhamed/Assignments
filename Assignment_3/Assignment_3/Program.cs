@@ -19,6 +19,10 @@ class Program
     {
         prices[0]-=5;
     }
+    static void AddBonusPagesByRef(ref int pages)
+    {
+        pages+=50;
+    }
     static void Main(string[] args)
     {
         #region Q1
@@ -54,10 +58,17 @@ class Program
 //             Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0]. Call it
 // with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward. What do you expect to
 // see, and why?
-double[] prices = { 25.5, 40.0 };
-            ApplyDiscount( prices);
-            System.Console.WriteLine(prices[0]);
-
+// double[] prices = { 25.5, 40.0 };
+//             ApplyDiscount( prices);
+//             System.Console.WriteLine(prices[0]);
+            //value of prices[0] changes becuase arrays passed by refrance so the funcition edit the real value not a copy
+        #endregion
+        #region Q7
+//             Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
+// Call it and print pages afterward. How is the result different from question 5?  
+            int pages=100;
+            AddBonusPagesByRef(ref  pages);
+            System.Console.WriteLine(pages);
         #endregion
     }
 }
