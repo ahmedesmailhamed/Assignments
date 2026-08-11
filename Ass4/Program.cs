@@ -30,7 +30,7 @@ class Program
         #endregion
 
         #region Q3
-            System.Console.WriteLine(book.Title);
+            //System.Console.WriteLine(book.Title);
         #endregion
         
         #region Q4
@@ -38,6 +38,14 @@ class Program
 // Add a Genre property to Book, assign it Genre.Science, and print it.
         book.genre=Genre.Science;
         System.Console.WriteLine(book.genre);
+        #endregion
+
+        #region Q5
+            // Using the Genre enum above, print the underlying int value of
+// Genre.Fiction, Genre.NonFiction, and Genre.Science by casting each to int.
+            System.Console.WriteLine((int)Genre.Fiction);
+            System.Console.WriteLine((int)Genre.NonFiction);
+            System.Console.WriteLine((int)Genre.Science);
         #endregion
     }
 }
