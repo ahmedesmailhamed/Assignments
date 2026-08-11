@@ -38,7 +38,7 @@ class Program
         #region Q4
         // Declare an enum Genre { Fiction, NonFiction, Science }.
 // Add a Genre property to Book, assign it Genre.Science, and print it.
-        book.genre=Genre.Science;
+        //book.genre=Genre.Science;
         //System.Console.WriteLine(book.genre);
         #endregion
 
@@ -60,8 +60,17 @@ class Program
         #region Q7
             //Given Genre genre = Genre.Fiction;
             // , convert it into a string using ToString() and print it.
-            Genre genre = Genre.Fiction;
-            System.Console.WriteLine(genre.ToString());
+            // Genre genre = Genre.Fiction;
+            // System.Console.WriteLine(genre.ToString());
+        #endregion
+
+        #region Q8
+            // Given string genreText = "Science", convert it into a Genre value
+            // using Enum.Parse() and print the result.
+
+            string genreText = "Science";
+            Genre genre=(Genre)Enum.Parse(typeof(Genre),genreText);
+            System.Console.WriteLine(genre);
         #endregion
     }
 }
