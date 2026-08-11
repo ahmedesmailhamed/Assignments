@@ -1,4 +1,6 @@
-﻿namespace Ass4;
+﻿using System.Collections.Concurrent;
+
+namespace Ass4;
 
 enum Genre { Fiction, NonFiction, Science };
 class Book
@@ -37,15 +39,22 @@ class Program
         // Declare an enum Genre { Fiction, NonFiction, Science }.
 // Add a Genre property to Book, assign it Genre.Science, and print it.
         book.genre=Genre.Science;
-        System.Console.WriteLine(book.genre);
+        //System.Console.WriteLine(book.genre);
         #endregion
 
         #region Q5
             // Using the Genre enum above, print the underlying int value of
 // Genre.Fiction, Genre.NonFiction, and Genre.Science by casting each to int.
-            System.Console.WriteLine((int)Genre.Fiction);
-            System.Console.WriteLine((int)Genre.NonFiction);
-            System.Console.WriteLine((int)Genre.Science);
+            // System.Console.WriteLine((int)Genre.Fiction);
+            // System.Console.WriteLine((int)Genre.NonFiction);
+            // System.Console.WriteLine((int)Genre.Science);
+        #endregion
+
+        #region Q6
+        // Given int genreNumber = 1;, cast it into a Genre value and print the result.
+        int genreNumber = 1;
+        Genre value=(Genre)genreNumber;
+        System.Console.WriteLine(value);
         #endregion
     }
 }
