@@ -52,9 +52,16 @@ class Program
 
         #region Q6
         // Given int genreNumber = 1;, cast it into a Genre value and print the result.
-        int genreNumber = 1;
-        Genre value=(Genre)genreNumber;
-        System.Console.WriteLine(value);
+        // int genreNumber = 1;
+        // Genre value=(Genre)genreNumber;
+        // System.Console.WriteLine(value);
+        #endregion
+
+        #region Q7
+            //Given Genre genre = Genre.Fiction;
+            // , convert it into a string using ToString() and print it.
+            Genre genre = Genre.Fiction;
+            System.Console.WriteLine(genre.ToString());
         #endregion
     }
 }
