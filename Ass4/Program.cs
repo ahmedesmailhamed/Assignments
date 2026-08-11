@@ -3,6 +3,7 @@ class Book
 {
     private string password="secret";
     internal int copiesInStock = 5;
+    public string Title="C#";
 }
 class Program
 {
@@ -22,7 +23,10 @@ class Program
         //  field to Book. Print it from Main. Does it compile?Why?
        System.Console.WriteLine(book.copiesInStock);
        //it's compiled because internal can be accessed in same project (the same assembly code)
+        #endregion
 
+        #region Q3
+            System.Console.WriteLine(book.Title);
         #endregion
         
     }
