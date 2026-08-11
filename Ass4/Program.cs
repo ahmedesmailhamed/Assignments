@@ -1,9 +1,13 @@
 ﻿namespace Ass4;
+
+enum Genre { Fiction, NonFiction, Science };
 class Book
 {
     private string password="secret";
     internal int copiesInStock = 5;
     public string Title="C#";
+    public Genre genre { get; set; }
+
 }
 class Program
 {
@@ -21,7 +25,7 @@ class Program
             //Q2
         //Add an internal int copiesInStock = 5;
         //  field to Book. Print it from Main. Does it compile?Why?
-       System.Console.WriteLine(book.copiesInStock);
+       //System.Console.WriteLine(book.copiesInStock);
        //it's compiled because internal can be accessed in same project (the same assembly code)
         #endregion
 
@@ -29,5 +33,11 @@ class Program
             System.Console.WriteLine(book.Title);
         #endregion
         
+        #region Q4
+        // Declare an enum Genre { Fiction, NonFiction, Science }.
+// Add a Genre property to Book, assign it Genre.Science, and print it.
+        book.genre=Genre.Science;
+        System.Console.WriteLine(book.genre);
+        #endregion
     }
 }
