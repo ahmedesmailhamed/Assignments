@@ -4,18 +4,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        #region Q1
+       #region Q2
 
         //a)
-        // A class is a reference type, while a struct is a value type.
-        // When a class object is assigned to another variable, both variables
-        // refer to the same object.
-        // When a struct is assigned to another variable, a separate copy is created.
+        // Shipment is the parent class.
 
         //b)
-        // Classes are more suitable for large applications because they support
-        // inheritance, polymorphism, and reference-based relationships.
-        // They also make it easier to organize and reuse complex code.
+        // ExpressShipment is the child class.
+
+        //c)
+        // ExpressShipment inherits the TrackingCode property from Shipment.
+        // It also has its own ExtraFee property.
+
+        //d)
+        // Inheritance allows us to reuse common code instead of writing the
+        // same code in multiple classes.
+        // This makes the code easier to maintain, modify, and reuse.
 
         #endregion
     }
