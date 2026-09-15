@@ -70,6 +70,18 @@ class Program
             }
         #endregion
 
+        #region Q6
+            // a) What is a Generic Interface?
+                // An interface that uses a type parameter so it can work with different data types
+
+            // b) Write IRepository<T>
+            interface IRepository<T>
+            {
+                void Add(T item);
+                T Get(int id);
+                void Delete(int id);
+            }
+        #endregion
 
     }
 }
