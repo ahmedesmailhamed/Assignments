@@ -97,9 +97,22 @@ class Program
                 // It means that T must be a reference type
 
             // b) Example
-            class Example<T> where T : class
+            // class Example<T> where T : class
+            // {
+            //     public T Value { get; set; }
+            // }
+        #endregion
+        #region Q9
+            // a) What is the 'new()' constraint?
+                // It means that T must have a public parameterless constructor
+
+            // b) Example
+            class Example<T> where T : new()
             {
-                public T Value { get; set; }
+                public T Create()
+                {
+                    return new T();
+                }
             }
         #endregion
 
