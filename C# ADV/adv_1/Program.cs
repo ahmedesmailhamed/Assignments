@@ -203,6 +203,21 @@ class Program
                 T Get();
             }
         #endregion
+        #region Q16
+            // a) What is Contravariance?
+                // Contravariance allows a generic type to use a less derived type
+                // where a more derived type is expected
+
+            // b) Explain the 'in' keyword
+                // The 'in' keyword is used for contravariance and allows T to be
+                // used as an input parameter
+
+            // c) Example
+            interface IConsumer<in T>
+            {
+                void Consume(T item);
+            }
+        #endregion
 
     }
 }
