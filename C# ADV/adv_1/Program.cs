@@ -128,6 +128,21 @@ class Program
                 }
             }
         #endregion
+        #region Q11
+            // a) What is the base class constraint?
+                // It means that T must inherit from a specific base class
+
+            // b) Example
+            class Employee
+            {
+            }
+
+            class EmployeeManager<T> where T : Employee
+            {
+                public T Employee { get; set; }
+            }
+
+        #endregion
 
     }
 }
