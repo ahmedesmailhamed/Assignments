@@ -236,6 +236,19 @@ class Program
                 public static int Count = 0;
             }
         #endregion
+        #region Q19
+            // How can you inherit from a generic class?
+                // A class can inherit from a generic class by specifying the type parameter
+
+            class Base<T>
+            {
+                public T Value { get; set; }
+            }
+
+            class Derived : Base<int>
+            {
+            }
+        #endregion
 
     }
 }
