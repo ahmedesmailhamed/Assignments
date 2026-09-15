@@ -82,6 +82,16 @@ class Program
                 void Delete(int id);
             }
         #endregion
+        #region Q7
+            // a) What is the 'struct' constraint?
+                // It means that T must be a value type such as int, double, or bool
+
+            // b) Example
+            class Example<T> where T : struct
+            {
+                public T Value { get; set; }
+            }
+        #endregion
 
     }
 }
