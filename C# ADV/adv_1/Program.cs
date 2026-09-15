@@ -46,5 +46,19 @@ class Program
                 }
             }
         #endregion
+
+        #region Q4
+            // a) What is a Generic Method?
+                // A method that uses a type parameter so it can work with different data types
+
+            // b) Write Swap<T> method
+            static void Swap<T>(ref T a, ref T b)
+            {
+                T temp = a;
+                a = b;
+                b = temp;
+            }
+        #endregion
+
     }
 }
