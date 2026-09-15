@@ -4,89 +4,137 @@ class Program
 {
     static void Main(string[] args)
     {
-        #region Q1
-            // a) What happens when you assign one object variable to another?
-                // Both variables end up pointing to the same object in memory (reference is copied, not the object itself)
+        DeliveryUtilities.PrintSystemTitle();
 
-            // b) Does assigning one object to another create a new object?
-                // No It just copies the reference so both variables refer to the same object.
-                // Changing one will affect the other since they point to the same data.
+        Console.WriteLine("Creating Shipments...");
+        DeliveryUtilities.PrintSeparator();
 
-            // c) Difference between copying an object and copying its reference
-                // Copying an object: creates a new, independent object with its own memory (data duplicated)
-                // Copying a reference: just copies the "address", both variables still point to one shared object
+        StandardShipment standard = new StandardShipment(
+            "SH001", "Laptop", 3, 80,
+            new DeliveryAddress("Cairo", "Nasr City", 10));
 
-        #endregion
+        ExpressShipment express = new ExpressShipment(
+            "SH002", "Mobile Phone", 2, 60,
+            new DeliveryAddress("Giza", "Dokki", 20), 30);
 
-        #region Q2
-            // a) What is a Shallow Copy?
-                // Creates a new object, but its reference-type members still point to the same original objects
+        InternationalShipment international = new InternationalShipment(
+            "SH003", "Television", 8, 120,
+            new DeliveryAddress("Cairo", "Maadi", 30),
+            "Germany", 100);
 
-            // b) What is a Deep Copy?
-                // Creates a new object AND creates new copies of all its reference-type members too (fully independent)
+        standard.UpdateTrackingStatus("In Transit");
+        express.UpdateTrackingStatus("Out For Delivery");
+        international.UpdateTrackingStatus("Delivered");
 
-            // c) What happens to reference-type members in a Shallow Copy?
-                // They are shared, both the original and the copy point to the same referenced object
+        Console.WriteLine("Standard Shipment Created");
+        Console.WriteLine("Express Shipment Created");
+        Console.WriteLine("International Shipment Created");
 
-            // d) What happens to reference-type members in a Deep Copy?
-                // They are duplicated, the copy has its own separate objects, not linked to the original
+        Console.WriteLine($"Total Shipments Created : {Shipment.GetTotalShipmentsCreated()}");
 
-            // e) One situation where Deep Copy is safer than Shallow Copy
-                // When the object contains a list or another class instance, and you need to modify the copy
-                // without affecting the original (e.g., copying a Student object that has a List<Course>)
+        DeliveryUtilities.PrintSeparator();
 
-        #endregion
+        Console.WriteLine("Object Copying");
+        DeliveryUtilities.PrintSeparator();
 
-         #region Q3
-            // a) What is a static field, and how is it different from an instance field?
-                // Static field: belongs to the class itself, shared by all objects, one copy only
-                // Instance field: belongs to each object separately, every object has its own copy
+        Shipment shipment1 = standard;
+        Shipment shipment2 = shipment1;
 
-            // b) What is a static method? Can it directly access instance members?
-                // A static method belongs to the class, called without creating an object
-                // No, it cannot directly access instance members (needs an object reference to do so)
+        Console.WriteLine($"Original Shipment : {shipment1.TrackingCode}");
+        Console.WriteLine($"Assigned Shipment : {shipment2.TrackingCode}");
+        Console.WriteLine($"Same Object : {ReferenceEquals(shipment1, shipment2)}");
 
-            // c) What is a static constructor, and when is it executed?
-                // Initializes static members, runs only once automatically,
-                // before the first use of the class (before creating any object or accessing any static member)
+        DeliveryUtilities.PrintSeparator();
 
-            // d) What is a static class? Can you create an object from it?
-                // A class that can't be instantiated, contains only static members
-                // No, you cannot create an object from a static class
+        Console.WriteLine("Shallow Copy");
+        DeliveryUtilities.PrintSeparator();
 
-        #endregion
+        Shipment shallow = shipment1.ShallowCopy();
 
-        #region Q4
-            // a) What is an Extension Method?
-                // A method that adds new functionality to an existing type without modifying its source code
+        Console.WriteLine($"Original Shipment Address : {shipment1.Destination.City}");
+        Console.WriteLine($"Copied Shipment Address : {shallow.Destination.City}");
 
-            // b) What keyword must be used in the first parameter?
-                // The this keyword before the type 
+        Console.WriteLine("Changing copied shipment address...");
+        shallow.Destination.City = "Giza";
 
-            // c) Where must an extension method be declared?
-                // Inside a static class, and the method itself must also be static
+        Console.WriteLine($"Original Shipment Address : {shipment1.Destination.City}");
+        Console.WriteLine($"Copied Shipment Address : {shallow.Destination.City}");
+        Console.WriteLine($"Same DeliveryAddress Object : {ReferenceEquals(shipment1.Destination, shallow.Destination)}");
 
-            // d) Can it access private members of the class it extends?
-                // No. Extension methods can only access public (or accessible) members, not private ones
+        DeliveryUtilities.PrintSeparator();
 
-        #endregion
+        Console.WriteLine("Deep Copy");
+        DeliveryUtilities.PrintSeparator();
 
-        #region Q5
-            // a) What is a Partial Class?
-                // A class whose definition is split across multiple files using the "partial" keyword,
-                // but compiled as one single class
+        shipment1.Destination.City = "Cairo";
 
-            // b) Why would a developer split one class into multiple files?
-                // To organize large classes, separate auto-generated code from manual code,
-                // and allow multiple developers to work on the same class without conflicts
+        Shipment deep = shipment1.DeepCopy();
 
-            // c) What is a Partial Method?
-                // A method declared in one part of a partial class, with its implementation optionally
-                // provided in another part
+        Console.WriteLine($"Original Shipment Address : {shipment1.Destination.City}");
+        Console.WriteLine($"Copied Shipment Address : {deep.Destination.City}");
 
-            // d) What happens if a declared partial method has no implementation?
-                // The compiler removes the method call entirely at compile time (no error occurs)
+        Console.WriteLine("Changing copied shipment address...");
+        deep.Destination.City = "Giza";
 
-        #endregion
+        Console.WriteLine($"Original Shipment Address : {shipment1.Destination.City}");
+        Console.WriteLine($"Copied Shipment Address : {deep.Destination.City}");
+        Console.WriteLine($"Same DeliveryAddress Object : {ReferenceEquals(shipment1.Destination, deep.Destination)}");
+
+        DeliveryUtilities.PrintSeparator();
+
+        Console.WriteLine("Extension Methods");
+        DeliveryUtilities.PrintSeparator();
+
+        Console.WriteLine(standard.GetSummary());
+        Console.WriteLine(express.GetSummary());
+        Console.WriteLine(international.GetSummary());
+
+        Console.WriteLine($"SH001 Is Delivered : {standard.IsDelivered()}");
+        Console.WriteLine($"SH003 Is Delivered : {international.IsDelivered()}");
+
+        DeliveryUtilities.PrintSeparator();
+
+        Console.WriteLine("Tracking Status");
+        DeliveryUtilities.PrintSeparator();
+
+        express.UpdateTrackingStatus("Out For Delivery");
+
+        DeliveryUtilities.PrintSeparator();
+
+        Console.WriteLine("Static Utilities");
+        DeliveryUtilities.PrintSeparator();
+
+        Console.WriteLine("Delivery Center");
+        Console.WriteLine($"Total Shipments Created : {Shipment.GetTotalShipmentsCreated()}");
+
+        DeliveryUtilities.PrintSeparator();
+
+        Console.WriteLine("Partial Method");
+        DeliveryUtilities.PrintSeparator();
+
+        international.UpdateTrackingStatus("Delivered");
+
+        Shipment[] shipments = { standard, express, international };
+
+        foreach (Shipment shipment in shipments)
+        {
+            shipment.PrintShipment();
+            Console.WriteLine();
+        }
+
+        CompletedShipment completed = new CompletedShipment(
+            "SH004", "Package", 4, 70,
+            new DeliveryAddress("Cairo", "Heliopolis", 15));
+
+        PriorityInternationalShipment priority =
+            new PriorityInternationalShipment(
+                "SH005", "Computer", 6, 150,
+                new DeliveryAddress("Cairo", "Maadi", 20),
+                "USA", 80);
+
+        Console.WriteLine(priority.GenerateCustomsReport());
+
+        Console.WriteLine();
+        Console.WriteLine("Assignment Completed");
     }
 }
