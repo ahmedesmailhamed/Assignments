@@ -225,6 +225,17 @@ class Program
                 // Covariance goes from more derived to less derived types.
                 // Contravariance goes from less derived to more derived types.
         #endregion
+        #region Q18
+            // How do static members work in generic types?
+                // Each closed generic type has its own separate static members.
+                // For example, Container<int> and Container<string> have different
+                // static values.
+                
+            class Counter<T>
+            {
+                public static int Count = 0;
+            }
+        #endregion
 
     }
 }
