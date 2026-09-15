@@ -107,11 +107,24 @@ class Program
                 // It means that T must have a public parameterless constructor
 
             // b) Example
-            class Example<T> where T : new()
+            // class Example<T> where T : new()
+            // {
+            //     public T Create()
+            //     {
+            //         return new T();
+            //     }
+            // }
+        #endregion
+        #region Q10
+            // a) What is the interface constraint?
+                // It means that T must implement or inherit from a specific interface
+
+            // b) Example
+            class Example<T> where T : IComparable<T>
             {
-                public T Create()
+                public int Compare(T a, T b)
                 {
-                    return new T();
+                    return a.CompareTo(b);
                 }
             }
         #endregion
