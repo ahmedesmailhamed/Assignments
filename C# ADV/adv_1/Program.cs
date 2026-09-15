@@ -161,6 +161,12 @@ class Program
             }
 
         #endregion
+        #region Q13
+            // What does the 'default' keyword do in generics?
+                // It returns the default value of the generic type T.
+                // For value types it is usually 0, false, etc.
+                // For reference types it is null
+        #endregion
 
     }
 }
