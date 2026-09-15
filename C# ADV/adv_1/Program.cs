@@ -143,6 +143,24 @@ class Program
             }
 
         #endregion
+        #region Q12
+            // a) How do you apply multiple constraints?
+                // Multiple constraints can be added after the where keyword
+
+            // b) Example
+            class Customer
+            {
+            }
+
+            class CustomerService<T> where T : Customer, IComparable<T>, new()
+            {
+                public T CreateCustomer()
+                {
+                    return new T();
+                }
+            }
+
+        #endregion
 
     }
 }
