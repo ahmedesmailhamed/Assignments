@@ -28,6 +28,23 @@ class Program
                 }
             }
         #endregion
-        
+
+        #region Q3
+            // a) What are Multiple Type Parameters?
+                // Using more than one type parameter in a generic class or method
+
+            // b) Write Pair<TKey, TValue>
+            class Pair<TKey, TValue>
+            {
+                public TKey Key { get; set; }
+                public TValue Value { get; set; }
+
+                public Pair(TKey key, TValue value)
+                {
+                    Key = key;
+                    Value = value;
+                }
+            }
+        #endregion
     }
 }
