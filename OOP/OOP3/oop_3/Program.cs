@@ -14,5 +14,18 @@ class Program
                 // Dynamic Binding: resolved at Runtime based on the actual object type (used with Overriding)
 
         #endregion
+
+        #region Q2
+            // a) Purpose of sealed on a class
+                // Prevents any other class from inheriting from this class
+
+            // b) Difference between sealed class and sealed method
+                // sealed class: closes the whole class from being inherited
+                // sealed method: closes only one specific method from being overridden again, the rest of the class can still be inherited normally
+
+            // c) Can a sealed method be overridden?
+                // No. sealed stops the overriding chain at that point,
+                // so the implementation becomes final and can't be changed by any further derived classes
+        #endregion
     }
 }
