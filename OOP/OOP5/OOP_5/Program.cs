@@ -70,5 +70,23 @@ class Program
                 // No. Extension methods can only access public (or accessible) members, not private ones
 
         #endregion
+
+        #region Q5
+            // a) What is a Partial Class?
+                // A class whose definition is split across multiple files using the "partial" keyword,
+                // but compiled as one single class
+
+            // b) Why would a developer split one class into multiple files?
+                // To organize large classes, separate auto-generated code from manual code,
+                // and allow multiple developers to work on the same class without conflicts
+
+            // c) What is a Partial Method?
+                // A method declared in one part of a partial class, with its implementation optionally
+                // provided in another part
+
+            // d) What happens if a declared partial method has no implementation?
+                // The compiler removes the method call entirely at compile time (no error occurs)
+
+        #endregion
     }
 }
