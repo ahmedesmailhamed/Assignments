@@ -11,5 +11,23 @@ class Program
             // b) Why use Generics?
                 // To write reusable and type-safe code without repeating the same code for different data types
         #endregion
+
+        #region Q2
+            // A Generic Container class with Add and Get methods
+            class Container<T>
+            {
+                private T value;
+                public void Add(T item)
+                {
+                    value = item;
+                }
+
+                public T Get()
+                {
+                    return value;
+                }
+            }
+        #endregion
+        
     }
 }
