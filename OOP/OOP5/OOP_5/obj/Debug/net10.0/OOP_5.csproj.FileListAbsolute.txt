@@ -1,0 +1,15 @@
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/bin/Debug/net10.0/OOP_5
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/bin/Debug/net10.0/OOP_5.deps.json
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/bin/Debug/net10.0/OOP_5.runtimeconfig.json
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/bin/Debug/net10.0/OOP_5.dll
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/bin/Debug/net10.0/OOP_5.pdb
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/OOP_5.GeneratedMSBuildEditorConfig.editorconfig
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/OOP_5.AssemblyInfoInputs.cache
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/OOP_5.AssemblyInfo.cs
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/OOP_5.csproj.CoreCompileInputs.cache
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/OOP_5.sourcelink.json
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/OOP_5.dll
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/refint/OOP_5.dll
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/OOP_5.pdb
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/OOP_5.genruntimeconfig.cache
+/home/abo_esmail/Dot Net track/Assignments/OOP/OOP5/OOP_5/obj/Debug/net10.0/ref/OOP_5.dll
