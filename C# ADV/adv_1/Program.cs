@@ -188,6 +188,21 @@ class Program
                 }
             }
         #endregion
+        #region Q15
+            // a) What is Covariance?
+                // Covariance allows a generic type to use a more derived type
+                // where a less derived type is expected
+
+            // b) Explain the 'out' keyword
+                // The 'out' keyword is used for covariance and allows T to be used
+                // as a return type
+
+            // c) Example
+            interface IProducer<out T>
+            {
+                T Get();
+            }
+        #endregion
 
     }
 }
