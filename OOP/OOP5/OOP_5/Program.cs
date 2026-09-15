@@ -36,5 +36,24 @@ class Program
                 // without affecting the original (e.g., copying a Student object that has a List<Course>)
 
         #endregion
+
+         #region Q3
+            // a) What is a static field, and how is it different from an instance field?
+                // Static field: belongs to the class itself, shared by all objects, one copy only
+                // Instance field: belongs to each object separately, every object has its own copy
+
+            // b) What is a static method? Can it directly access instance members?
+                // A static method belongs to the class, called without creating an object
+                // No, it cannot directly access instance members (needs an object reference to do so)
+
+            // c) What is a static constructor, and when is it executed?
+                // Initializes static members, runs only once automatically,
+                // before the first use of the class (before creating any object or accessing any static member)
+
+            // d) What is a static class? Can you create an object from it?
+                // A class that can't be instantiated, contains only static members
+                // No, you cannot create an object from a static class
+
+        #endregion
     }
 }
