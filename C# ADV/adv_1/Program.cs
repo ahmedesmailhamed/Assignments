@@ -250,5 +250,56 @@ class Program
             }
         #endregion
 
+        #region Q20
+            // Create a generic Cache<TKey, TValue> with Add, Get, Remove,
+            // Contains, and expiration support
+
+            class Cache<TKey, TValue>
+            {
+                private Dictionary<TKey, (TValue Value, DateTime Expiration)> cache
+                    = new Dictionary<TKey, (TValue, DateTime)>();
+
+                public void Add(TKey key, TValue value, TimeSpan expiration)
+                {
+                    cache[key] = (value, DateTime.Now.Add(expiration));
+                }
+
+                public TValue Get(TKey key)
+                {
+                    if (!cache.ContainsKey(key))
+                        return default;
+
+                    var item = cache[key];
+
+                    if (DateTime.Now > item.Expiration)
+                    {
+                        cache.Remove(key);
+                        return default;
+                    }
+
+                    return item.Value;
+                }
+
+                public void Remove(TKey key)
+                {
+                    cache.Remove(key);
+                }
+
+                public bool Contains(TKey key)
+                {
+                    if (!cache.ContainsKey(key))
+                        return false;
+
+                    if (DateTime.Now > cache[key].Expiration)
+                    {
+                        cache.Remove(key);
+                        return false;
+                    }
+
+                    return true;
+                }
+            }
+        #endregion
+
     }
 }
