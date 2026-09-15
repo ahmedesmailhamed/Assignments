@@ -87,7 +87,17 @@ class Program
                 // It means that T must be a value type such as int, double, or bool
 
             // b) Example
-            class Example<T> where T : struct
+            // class Example<T> where T : struct
+            // {
+            //     public T Value { get; set; }
+            // }
+        #endregion
+        #region Q8
+            // a) What is the 'class' constraint?
+                // It means that T must be a reference type
+
+            // b) Example
+            class Example<T> where T : class
             {
                 public T Value { get; set; }
             }
