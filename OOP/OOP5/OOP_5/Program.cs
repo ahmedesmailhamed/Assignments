@@ -55,5 +55,20 @@ class Program
                 // No, you cannot create an object from a static class
 
         #endregion
+
+        #region Q4
+            // a) What is an Extension Method?
+                // A method that adds new functionality to an existing type without modifying its source code
+
+            // b) What keyword must be used in the first parameter?
+                // The this keyword before the type 
+
+            // c) Where must an extension method be declared?
+                // Inside a static class, and the method itself must also be static
+
+            // d) Can it access private members of the class it extends?
+                // No. Extension methods can only access public (or accessible) members, not private ones
+
+        #endregion
     }
 }
