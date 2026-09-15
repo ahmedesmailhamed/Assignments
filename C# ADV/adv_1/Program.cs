@@ -218,6 +218,13 @@ class Program
                 void Consume(T item);
             }
         #endregion
+        #region Q17
+            // What is the difference between Covariance and Contravariance?
+                // Covariance uses the 'out' keyword and is mainly used for output values.
+                // Contravariance uses the 'in' keyword and is mainly used for input values.
+                // Covariance goes from more derived to less derived types.
+                // Contravariance goes from less derived to more derived types.
+        #endregion
 
     }
 }
