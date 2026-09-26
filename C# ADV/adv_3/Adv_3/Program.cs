@@ -5,38 +5,40 @@ class Program
 {
     static void Main()
     {
-         HashSet<string> emails =new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+         Queue<string> printQueue = new Queue<string>();
 
-        emails.Add("ahmed@test.com");
-        emails.Add("AHMED@test.com");
-        emails.Add("sara@test.com");
-        emails.Add("Sara@Test.Com");
+        printQueue.Enqueue("Report.pdf");
+        printQueue.Enqueue("Invoice.pdf");
+        printQueue.Enqueue("Letter.docx");
+        printQueue.Enqueue("Resume.pdf");
+        printQueue.Enqueue("Photo.jpg");
 
-        Console.WriteLine($"Email Count: {emails.Count}");
+        Console.WriteLine("Queue:");
 
-        HashSet<int> setA = new HashSet<int> { 1, 2, 3, 4, 5 };
-        HashSet<int> setB = new HashSet<int> { 4, 5, 6, 7, 8 };
+        foreach (string document in printQueue)
+        {
+            Console.WriteLine(document);
+        }
 
-        HashSet<int> union = new HashSet<int>(setA);
-        union.UnionWith(setB);
+        Console.WriteLine($"Count: {printQueue.Count}");
 
-        Console.WriteLine("Union:");
-        Console.WriteLine(string.Join(", ", union));
+        Console.WriteLine($"\nNext document: {printQueue.Peek()}");
 
-        HashSet<int> intersection = new HashSet<int>(setA);
-        intersection.IntersectWith(setB);
+        Console.WriteLine("\nProcessing Queue:");
 
-        Console.WriteLine("Intersection:");
-        Console.WriteLine(string.Join(", ", intersection));
+        while (printQueue.Count > 0)
+        {
+            string document = printQueue.Dequeue();
+            Console.WriteLine($"Printing: {document}");
+        }
 
-        HashSet<int> difference = new HashSet<int>(setA);
-        difference.ExceptWith(setB);
+        bool success = printQueue.TryDequeue(out string nextDocument);
 
-        Console.WriteLine("Except:");
-        Console.WriteLine(string.Join(", ", difference));
+        Console.WriteLine($"\nTryDequeue succeeded: {success}");
 
-        HashSet<int> subset = new HashSet<int> { 1, 2 };
-
-        Console.WriteLine($"{{1, 2}} is subset of Set A: {subset.IsSubsetOf(setA)}");
+        if (!success)
+        {
+            Console.WriteLine("Queue is empty.");
+        }
     }
 }
