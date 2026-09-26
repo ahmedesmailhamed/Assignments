@@ -3,16 +3,28 @@ using System.Collections.Generic;
 
 class Program
 {
-    static List<Product> SearchProducts(List<Product> products, Func<Product, bool> filter)
+    static void PrintReport(List<Product> products, Action<Product> action)
     {
-        List<Product> result = new List<Product>();
-
+        foreach (Product product in products)
+        {  action(product);}
+    }
+    static List<T> TransformProducts<T>(List<Product> products, Func<Product, T> transform)
+    {
+        List<T> result = new List<T>();
         foreach (Product product in products)
         {
-            if (filter(product))
-                result.Add(product);
+        result.Add(transform(product));
         }
+        return result;
+    }
 
+    static List<Product> FilterProducts(List<Product> products, Predicate<Product> condition)
+    {
+        List<Product> result = new List<Product>();
+        foreach (Product product in products)
+        {
+            if (condition(product)) result.Add(product);
+        }
         return result;
     }
 
@@ -32,32 +44,42 @@ class Program
             new Product { Id = 10, Name = "Jacket", Category = "Clothing", Price = 120, Stock = 15 }
         };
 
-        var electronics = SearchProducts(catalog,
-            p => p.Category == "Electronics");
+        PrintReport(catalog,
+            p => Console.WriteLine($"{p.Name} - ${p.Price}"));
 
-        var cheaperThan50 = SearchProducts(catalog,
-            p => p.Price < 50);
+        Console.WriteLine();
 
-        var inStock = SearchProducts(catalog,
-            p => p.Stock > 0);
+        PrintReport(catalog,
+            p => Console.WriteLine(
+                $"[{p.Category}] {p.Name} | Price: ${p.Price} | Stock: {p.Stock}"));
 
-        var clothingUnder100 = SearchProducts(catalog,
-            p => p.Category == "Clothing" && p.Price < 100);
+        Console.WriteLine();
 
-        Console.WriteLine("Electronics:");
-        foreach (Product product in electronics)
-            Console.WriteLine(product.Name);
+        List<string> summaries = TransformProducts(catalog,
+            p => $"{p.Name} (${p.Price})");
 
-        Console.WriteLine("\nProducts cheaper than $50:");
-        foreach (Product product in cheaperThan50)
-            Console.WriteLine(product.Name);
+        foreach (string summary in summaries)
+        { Console.WriteLine(summary);}
 
-        Console.WriteLine("\nProducts in stock:");
-        foreach (Product product in inStock)
-            Console.WriteLine(product.Name);
+        Console.WriteLine();
 
-        Console.WriteLine("\nClothing under $100:");
-        foreach (Product product in clothingUnder100)
-            Console.WriteLine(product.Name);
+        List<string> priceLabels = TransformProducts(catalog,
+            p => $"{p.Name}: {(p.Price > 100 ? "Expensive!" : "Affordable")}");
+
+        foreach (string label in priceLabels)
+        {
+        Console.WriteLine(label);
+        }
+
+        Console.WriteLine();
+
+        List<Product> lowStock = FilterProducts(catalog,
+            p => p.Stock < 20);
+
+        foreach (Product product in lowStock)
+        {
+            Console.WriteLine(
+                $"[LOW STOCK] {product.Name}: only {product.Stock} left!");
+        }
     }
 }
