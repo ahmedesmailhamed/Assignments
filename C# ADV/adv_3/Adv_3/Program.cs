@@ -5,40 +5,33 @@ class Program
 {
     static void Main()
     {
-         Queue<string> printQueue = new Queue<string>();
+        Stack<string> browserHistory = new Stack<string>();
 
-        printQueue.Enqueue("Report.pdf");
-        printQueue.Enqueue("Invoice.pdf");
-        printQueue.Enqueue("Letter.docx");
-        printQueue.Enqueue("Resume.pdf");
-        printQueue.Enqueue("Photo.jpg");
+        browserHistory.Push("google.com");
+        browserHistory.Push("github.com");
+        browserHistory.Push("stackoverflow.com");
+        browserHistory.Push("youtube.com");
+        browserHistory.Push("claude.ai");
 
-        Console.WriteLine("Queue:");
+        Console.WriteLine($"Current Page: {browserHistory.Peek()}");
 
-        foreach (string document in printQueue)
+        Console.WriteLine("\nGoing Back:");
+
+        for (int i = 0; i < 3; i++)
         {
-            Console.WriteLine(document);
+            string page = browserHistory.Pop();
+            Console.WriteLine($"Leaving: {page}");
         }
 
-        Console.WriteLine($"Count: {printQueue.Count}");
+        Console.WriteLine($"\nCurrent Page: {browserHistory.Peek()}");
 
-        Console.WriteLine($"\nNext document: {printQueue.Peek()}");
+        bool success = browserHistory.TryPop(out string pageAfterEmpty);
 
-        Console.WriteLine("\nProcessing Queue:");
-
-        while (printQueue.Count > 0)
-        {
-            string document = printQueue.Dequeue();
-            Console.WriteLine($"Printing: {document}");
-        }
-
-        bool success = printQueue.TryDequeue(out string nextDocument);
-
-        Console.WriteLine($"\nTryDequeue succeeded: {success}");
+        Console.WriteLine($"\nTryPop succeeded: {success}");
 
         if (!success)
         {
-            Console.WriteLine("Queue is empty.");
+            Console.WriteLine("Stack is empty.");
         }
     }
 }
