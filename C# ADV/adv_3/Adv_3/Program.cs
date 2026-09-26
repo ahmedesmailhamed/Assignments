@@ -5,43 +5,38 @@ class Program
 {
     static void Main()
     {
-         Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+         HashSet<string> emails =new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-        phoneBook.Add("Ahmed", "01012345678");
-        phoneBook.Add("Sara", "01123456789");
-        phoneBook.Add("Ali", "01234567890");
-        phoneBook.Add("Mona", "01534567890");
+        emails.Add("ahmed@test.com");
+        emails.Add("AHMED@test.com");
+        emails.Add("sara@test.com");
+        emails.Add("Sara@Test.Com");
 
-        phoneBook["Eslam"] = "01098765432";
+        Console.WriteLine($"Email Count: {emails.Count}");
 
-        try
-        {
-            phoneBook.Add("Ahmed", "01111111111");
-        }
-        catch (ArgumentException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-        }
+        HashSet<int> setA = new HashSet<int> { 1, 2, 3, 4, 5 };
+        HashSet<int> setB = new HashSet<int> { 4, 5, 6, 7, 8 };
 
-        bool added = phoneBook.TryAdd("Ahmed", "01222222222");
-        Console.WriteLine($"TryAdd succeeded: {added}");
+        HashSet<int> union = new HashSet<int>(setA);
+        union.UnionWith(setB);
 
-        bool exists = phoneBook.ContainsKey("Khaled");
-        Console.WriteLine($"Khaled exists: {exists}");
+        Console.WriteLine("Union:");
+        Console.WriteLine(string.Join(", ", union));
 
-        string phone = phoneBook.GetValueOrDefault("Khaled", "Not Found");
-        Console.WriteLine($"Khaled phone: {phone}");
+        HashSet<int> intersection = new HashSet<int>(setA);
+        intersection.IntersectWith(setB);
 
-        Console.WriteLine("\nKeys:");
-        foreach (string key in phoneBook.Keys)
-        {
-            Console.Write($"{key} ");
-        }
+        Console.WriteLine("Intersection:");
+        Console.WriteLine(string.Join(", ", intersection));
 
-        Console.WriteLine("\n\nValues:");
-        foreach (string value in phoneBook.Values)
-        {
-            Console.Write($"{value} ");
-        }
+        HashSet<int> difference = new HashSet<int>(setA);
+        difference.ExceptWith(setB);
+
+        Console.WriteLine("Except:");
+        Console.WriteLine(string.Join(", ", difference));
+
+        HashSet<int> subset = new HashSet<int> { 1, 2 };
+
+        Console.WriteLine($"{{1, 2}} is subset of Set A: {subset.IsSubsetOf(setA)}");
     }
 }
