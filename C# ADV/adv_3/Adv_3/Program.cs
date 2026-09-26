@@ -5,41 +5,37 @@ class Program
 {
     static void Main()
     {
-        List<int> grades = new List<int>
+        SortedDictionary<int, string> leaderboard = new SortedDictionary<int, string>();
+
+        leaderboard.Add(500, "Ahmed");
+        leaderboard.Add(200, "Sara");
+        leaderboard.Add(800, "Ali");
+        leaderboard.Add(350, "Mona");
+
+        Console.WriteLine("Leaderboard:");
+
+        foreach (var player in leaderboard)
         {
-            85, 92, 78, 95, 88, 70, 100, 65
-        };
+            Console.WriteLine($"{player.Key} = {player.Value}");
+        }
 
-        Console.WriteLine("Grades:");
-        Console.WriteLine(string.Join(", ", grades));
+        Console.WriteLine($"\nFirst Key: {leaderboard.Keys.First()}");
+        Console.WriteLine($"First Value: {leaderboard.Values.First()}");
 
-        Console.WriteLine($"Count: {grades.Count}");
-        Console.WriteLine($"First Grade: {grades[0]}");
-        Console.WriteLine($"Last Grade: {grades[grades.Count - 1]}");
+        Console.WriteLine($"\nScore 500 exists: {leaderboard.ContainsKey(500)}");
 
-        grades.Sort();
+        if (leaderboard.TryGetValue(999, out string playerName))
+            Console.WriteLine($"Player with score 999: {playerName}");
+        else
+            Console.WriteLine("Player with score 999: Not Found");
 
-        Console.WriteLine("\nSorted Grades:");
-        Console.WriteLine(string.Join(", ", grades));
+        leaderboard.Remove(200);
 
-        int firstAbove90 = grades.Find(g => g > 90);
-        Console.WriteLine($"\nFirst grade above 90: {firstAbove90}");
+        Console.WriteLine("\nLeaderboard after removing score 200:");
 
-        List<int> failingGrades = grades.FindAll(g => g < 75);
-
-        Console.WriteLine("Failing Grades:");
-        Console.WriteLine(string.Join(", ", failingGrades));
-
-        grades.RemoveAll(g => g < 75);
-
-        Console.WriteLine("Grades after removing failing grades:");
-        Console.WriteLine(string.Join(", ", grades));
-
-        Console.WriteLine($"Any grade equals 100: {grades.Contains(100)}");
-
-        List<string> gradeLabels = grades.ConvertAll(g => $"Grade: {g}");
-
-        Console.WriteLine("Grade Labels:");
-        Console.WriteLine(string.Join(", ", gradeLabels));
+        foreach (var player in leaderboard)
+        {
+            Console.WriteLine($"{player.Key} = {player.Value}");
+        }
     }
 }
