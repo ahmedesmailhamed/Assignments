@@ -5,37 +5,43 @@ class Program
 {
     static void Main()
     {
-        SortedDictionary<int, string> leaderboard = new SortedDictionary<int, string>();
+         Dictionary<string, string> phoneBook = new Dictionary<string, string>();
 
-        leaderboard.Add(500, "Ahmed");
-        leaderboard.Add(200, "Sara");
-        leaderboard.Add(800, "Ali");
-        leaderboard.Add(350, "Mona");
+        phoneBook.Add("Ahmed", "01012345678");
+        phoneBook.Add("Sara", "01123456789");
+        phoneBook.Add("Ali", "01234567890");
+        phoneBook.Add("Mona", "01534567890");
 
-        Console.WriteLine("Leaderboard:");
+        phoneBook["Eslam"] = "01098765432";
 
-        foreach (var player in leaderboard)
+        try
         {
-            Console.WriteLine($"{player.Key} = {player.Value}");
+            phoneBook.Add("Ahmed", "01111111111");
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
         }
 
-        Console.WriteLine($"\nFirst Key: {leaderboard.Keys.First()}");
-        Console.WriteLine($"First Value: {leaderboard.Values.First()}");
+        bool added = phoneBook.TryAdd("Ahmed", "01222222222");
+        Console.WriteLine($"TryAdd succeeded: {added}");
 
-        Console.WriteLine($"\nScore 500 exists: {leaderboard.ContainsKey(500)}");
+        bool exists = phoneBook.ContainsKey("Khaled");
+        Console.WriteLine($"Khaled exists: {exists}");
 
-        if (leaderboard.TryGetValue(999, out string playerName))
-            Console.WriteLine($"Player with score 999: {playerName}");
-        else
-            Console.WriteLine("Player with score 999: Not Found");
+        string phone = phoneBook.GetValueOrDefault("Khaled", "Not Found");
+        Console.WriteLine($"Khaled phone: {phone}");
 
-        leaderboard.Remove(200);
-
-        Console.WriteLine("\nLeaderboard after removing score 200:");
-
-        foreach (var player in leaderboard)
+        Console.WriteLine("\nKeys:");
+        foreach (string key in phoneBook.Keys)
         {
-            Console.WriteLine($"{player.Key} = {player.Value}");
+            Console.Write($"{key} ");
+        }
+
+        Console.WriteLine("\n\nValues:");
+        foreach (string value in phoneBook.Values)
+        {
+            Console.Write($"{value} ");
         }
     }
 }
